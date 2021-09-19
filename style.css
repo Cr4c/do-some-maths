@@ -1,0 +1,114 @@
+body {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: sans-serif;
+	background-color: #94dfff;
+}
+
+input[type=text] {
+	background-color: rgb(236, 236, 236);
+	border-width: 2px;
+	border-color: black;
+	border-radius: 5px;
+	height: 40px;
+	text-align: center;
+	font-size: 25px;
+	color: black;
+}
+input[type=text].number {
+	width: 150px;
+}
+input[type=text].operator {
+	width: 50px;
+}
+input[type=text].username {
+	background-color: rgb(236, 236, 236);
+	border-width: 1px;
+	border-color: black;
+	border-radius: 5px;
+	padding-left: 2px;
+	height: 30px;
+	text-align: left;
+	font-size: 16px;
+	color: black;
+}
+input[type=text]:focus {
+	outline-width: 0;
+}
+input[type=checkbox] {
+	/* think of a design */
+}
+input[type=radio] {
+	/* think of a design */
+}
+
+h2 {
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+h3 {
+	font-size: 15px;
+	padding-bottom: 1px;
+}
+
+label {
+	font-weight: normal;
+}
+label#multiplication_description {
+	display: flex;
+	padding-bottom: 5px;
+	font-weight: normal;
+}
+
+div.config {
+	justify-content: space-evenly;
+}
+div.start {
+	padding-top: 10px;
+}
+
+button {
+	text-align: center;
+	border-width: 1px;
+	border-color: #d7dada;
+	border-radius: 5px;
+	font-size: 25px;
+	padding: 0.1em 0.3em 0.1em 0.3em;
+	color: black;
+	background-image: linear-gradient(to bottom,white, rgb(233, 233, 233));
+	height: 42px;
+}
+
+.stats-display {
+	padding: 3em 1.2em 3em 1.2em;
+}
+
+table {
+	border-spacing: 3em 0.1em;
+}
+
+th {
+	font-size: 1.3em;
+	border-bottom: 1px solid darkgray;
+	text-align: right;
+}
+
+td {
+	text-align: right;
+}
+
+.th-operator {
+	font-size: 1.1em;
+	font-weight: normal;
+	text-transform: capitalize;
+}
+
+.table-title {
+	text-align: left;
+}
+
+.table-row-title {
+	text-align: left;
+}

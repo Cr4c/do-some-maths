@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<title>Math</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div class="config" name="state:start">
+		<!--
+			operators: use which operators?
+			easy mult: both number below 10
+			nice mult: one number below 10
+			hard mult: both numbers above 10
+		-->
+		<div>
+			<h2>Configure your tasks:</h2>
+		</div>
+		<div class="operators" id="operators">
+			<h3>Operators:</h3>
+			<div>
+				<input type="checkbox" name="operator_selection" id="addition">
+				<label for="addition">Addition</label>
+			</div>
+			<div>
+				<input type="checkbox" name="operator_selection" id="subtraction">
+				<label for="subtraction">Subtraction</label>
+			</div>
+			<div>
+				<input type="checkbox" name="operator_selection" id="multiplication" onclick="showMultiplicationSelection()">
+				<label for="multiplication">Multiplication</label>
+			</div>
+			<div>
+				<input type="checkbox" name="operator_selection" id="division" onclick="showDivisionSelection()">
+				<label for="division">Division</label>
+			</div>
+		</div>
+		<div class="multiplication_type" id="multiplication_type">
+			<h3>Multiplication type:</h3>
+			<label id="multiplication_description">If above 10, numbers have a maximum of 100.</label>
+			<div>
+				<div>
+					<input type="radio" name="multiplication_type" id="multiplication_easy" value="easy">
+					<label for="multiplication_easy">Easy: Both numbers are less than or equal to 10.</label>
+				</div>
+				<div>
+					<input type="radio" name="multiplication_type" id="multiplication_nice" value="nice" checked>
+					<label for="multiplication_nice">Nice: One number is less than or equal to 10, one is greater than or equal to 10.</label>
+				</div>
+				<div>
+					<input type="radio" name="multiplication_type" id="multiplication_hard" value="hard">
+					<label for="multiplication_hard">Hard: Both numbers range from 1 to 100.</label>
+				</div>
+			</div>
+		</div>
+		<div class="division_type" id="division_type">
+			<h3>Division type:</h3>
+			<div>
+				<div>
+					<input type="radio" name="division_type" id="division_easy" value="easy" checked>
+					<label for="division_easy">Easy: Both divisor and result are less than or equal to 10.</label>
+				</div>
+				<div>
+					<input type="radio" name="division_type" id="division_hard" value="hard">
+					<label for="division_hard">Hard: Divisor ranges from 1 to 30, but the result will less than 10.</label>
+				</div>
+			</div>
+		</div>
+		<div class="user" id="user">
+			<h3>Your Username:</h3>
+			<input type="text" class="username" id="username" spellcheck="false" autocomplete="off">
+		</div>
+		<div class="start">
+			<button onclick="start()">Go!</button>
+		</div>
+	</div>
+	<div name="state:task">
+		<div class="title">
+			<h1>Task:</h1>
+		</div>
+		<div class="task" name="state:task">
+			<input type="text" class="number" id="number1" placeholder="X" readonly>
+			<input type="text" class="operator" id="operator" placeholder="+" readonly>
+			<input type="text" class="number" id="number2" placeholder="Y" readonly>
+			<input type="text" class="operator" id="equals" value="=" readonly>
+			<input type="text" class="number" id="result" onblur="this.focus()" autofocus>
+			<button onclick="next()">Next</button>
+			<button onclick="end()">Quit</button>
+		</div>
+		<div class="correct">
+			<label id="correct">Correct?</label>
+		</div>
+	</div>
+	<div name="state:stats">
+		<div class="title">
+			<h1>Statistics:</h1>
+		</div>
+		<div id="stats-info">Here you can see how you performed on each task.</div>
+		<div class="stats-display">
+			<table>
+				<thead>
+					<tr id="stats-table-header">
+						<th class="table-title">Statistics</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="stats-table-correct">
+						<td class="table-row-title">Correct</td>
+					</tr>
+					<tr id="stats-table-incorrect">
+						<td class="table-row-title">Incorrect</td>
+					</tr>
+					<tr id="stats-table-timing">
+						<td class="table-row-title">Ø Time</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+
+</html>
